@@ -1,0 +1,101 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #eef7ee;
+  color: #1f3b1f;
+}
+
+header {
+  background: linear-gradient(90deg, #2e7d32, #1b5e20);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  background: #145a1f;
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 25px;
+}
+
+h2 {
+  border-left: 6px solid #2e7d32;
+  padding-left: 10px;
+}
+
+.galeria {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card p {
+  padding: 10px;
+}
+
+.quiz-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+button {
+  background: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #1b5e20;
+}
+
+#opcoes button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #1b5e20;
+  color: white;
+}
