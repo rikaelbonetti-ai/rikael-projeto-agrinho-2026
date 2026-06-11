@@ -1,0 +1,118 @@
+const perguntas = [
+  {
+    pergunta: "O que são sistemas agroflorestais?",
+    opcoes: [
+      "Plantio de uma única cultura",
+      "Integração de árvores, plantas e animais",
+      "Uso apenas de máquinas"
+    ],
+    correta: 1
+  },
+  {
+    pergunta: "Um benefício da agrofloresta é:",
+    opcoes: [
+      "Destruição do solo",
+      "Aumento da biodiversidade",
+      "Menos plantas"
+    ],
+    correta: 1
+  },
+  {
+    pergunta: "Qual animal ajuda no controle de pragas?",
+    opcoes: [
+      "Galinhas",
+      "Leões",
+      "Tubarões"
+    ],
+    correta: 0
+  },
+  {
+    pergunta: "A agrofloresta ajuda a:",
+    opcoes: [
+      "Melhorar o solo",
+      "Poluir rios",
+      "Desmatar florestas"
+    ],
+    correta: 0
+  },
+  {
+    pergunta: "As árvores na agrofloresta servem para:",
+    opcoes: [
+      "Proteger o solo",
+      "Destruir plantas",
+      "Secar a terra"
+    ],
+    correta: 0
+  },
+  {
+    pergunta: "Quem trabalha na agrofloresta?",
+    opcoes: [
+      "Agricultores",
+      "Astronautas",
+      "Robôs"
+    ],
+    correta: 0
+  },
+  {
+    pergunta: "A agrofloresta imita:",
+    opcoes: [
+      "A natureza",
+      "A cidade",
+      "Fábricas"
+    ],
+    correta: 0
+  },
+  {
+    pergunta: "Qual prática é comum?",
+    opcoes: [
+      "Diversidade de espécies",
+      "Monocultura",
+      "Asfalto"
+    ],
+    correta: 0
+  }
+];
+
+let atual = 0;
+let pontos = 0;
+
+function carregar() {
+  const p = perguntas[atual];
+
+  document.getElementById("pergunta").innerText = p.pergunta;
+
+  const op = document.getElementById("opcoes");
+  op.innerHTML = "";
+
+  p.opcoes.forEach((texto, i) => {
+    const btn = document.createElement("button");
+    btn.innerText = texto;
+
+    btn.onclick = () => {
+      if (i === p.correta) {
+        pontos++;
+        document.getElementById("resultado").innerText = "✔ Correto!";
+      } else {
+        document.getElementById("resultado").innerText = "❌ Errado!";
+      }
+    };
+
+    op.appendChild(btn);
+  });
+}
+
+function proximaPergunta() {
+  atual++;
+
+  if (atual < perguntas.length) {
+    carregar();
+    document.getElementById("resultado").innerText = "";
+  } else {
+    document.getElementById("quiz").innerHTML = `
+      <h2>🌿 Quiz finalizado!</h2>
+      <p>Você acertou ${pontos} de ${perguntas.length} perguntas.</p>
+    `;
+  }
+}
+
+carregar();
